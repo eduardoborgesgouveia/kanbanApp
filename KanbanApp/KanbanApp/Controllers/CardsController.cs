@@ -35,7 +35,7 @@ namespace KanbanApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Cards card)
         {
-            if(card.id != null)
+            if(card.id != Guid.Empty)
             {
                 return BadRequest();
             }
