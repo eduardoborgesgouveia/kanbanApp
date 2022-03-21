@@ -34,7 +34,7 @@ A aplicação desenvolvida conta com um sistema de login e autorização de aces
 <p> Uma vez que esses parâmetros foram configurados é possível rodar a aplicação através da execução do comando abaixo via linha de comando na pasta raiz da aplicação:</p>
 
 ```console
-> dotnet run --project ./BACK/KanbanApp.csproj
+> dotnet run --project ./BACK/KanbanApp/KanbanApp.csproj
 
 ```
 # Realizando o login
