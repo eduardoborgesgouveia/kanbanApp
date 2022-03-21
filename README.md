@@ -34,7 +34,7 @@ A aplicação desenvolvida conta com um sistema de login e autorização de aces
 <p> Uma vez que esses parâmetros foram configurados é possível rodar a aplicação através da execução do comando abaixo via linha de comando na pasta raiz da aplicação:</p>
 
 ```console
-> dotnet run --project ./KanbanApp/KanbanApp.csproj
+> dotnet run --project ./BACK/KanbanApp.csproj
 
 ```
 # Realizando o login
@@ -52,6 +52,22 @@ A aplicação desenvolvida conta com um sistema de login e autorização de aces
 (PUT)       http://localhost:5000/cards/{id}
 (DELETE)    http://localhost:5000/cards/{id}
 ```
+# Considerações Finais
+<p> O projeto pedia para criar o backend e colocar na pasta "BACK" assumindo que a outra pasta seria o "FRONT" disponibilizado pela equipe da Let's Code.</p>
+<p> Entretanto, ao rodar o Front na minha máquina eu fui incapaz de faze-lo funcionar em tempo de desafio. O objeto cards apresentava um erro. Tentei contorna-lo colocando uma trativa conforme o código abaixo. Porém, o erro persistiu em outras etapas do código do FRONT e a falta de tempo hábil me impediu de resolver.</p>
 
-<p></p>
-<p></p>
+```javascript
+{ cards ? 
+  cards.filter(c => c.lista === 'ToDo').map(c =>
+      <Card
+          key={c.id}
+          titulo={c.titulo}
+          conteudo={c.conteudo}
+          sendForward={changeListHandler('Doing', c.id)}
+          update={updateCardHandler(c.id)}
+          remove={removeCardHandler(c.id)}
+      />
+  ) : <p>Sem cards</p>
+}
+```
+<p> Entretanto, disponibilizo o acesso ao meu POSTMAN https://go.postman.co/workspace/My-Workspace~c9cf4b09-b583-4a08-831c-ed4cd938c525/collection/4126600-f8f7353f-0da0-4f5b-b4e6-397b7c5246a7?action=share&creator=4126600</p>
