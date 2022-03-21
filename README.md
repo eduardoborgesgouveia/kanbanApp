@@ -58,16 +58,16 @@ A aplicação desenvolvida conta com um sistema de login e autorização de aces
 
 ```javascript
 { cards ? 
-  cards.filter(c => c.lista === 'ToDo').map(c =>
-      <Card
-          key={c.id}
-          titulo={c.titulo}
-          conteudo={c.conteudo}
-          sendForward={changeListHandler('Doing', c.id)}
-          update={updateCardHandler(c.id)}
-          remove={removeCardHandler(c.id)}
-      />
-  ) : <p>Sem cards</p>
+    cards.filter(c => c !== undefined && c.lista === 'ToDo').map(c =>
+        <Card
+            key={c.id}
+            titulo={c.titulo}
+            conteudo={c.conteudo}
+            sendForward={changeListHandler('Doing', c.id)}
+            update={updateCardHandler(c.id)}
+            remove={removeCardHandler(c.id)}
+        />
+    ) : <p>Sem cards</p>
 }
 ```
-<p> Entretanto, disponibilizo o acesso ao meu POSTMAN https://go.postman.co/workspace/My-Workspace~c9cf4b09-b583-4a08-831c-ed4cd938c525/collection/4126600-f8f7353f-0da0-4f5b-b4e6-397b7c5246a7?action=share&creator=4126600</p>
+
